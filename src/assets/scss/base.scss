@@ -1,0 +1,14 @@
+@import "reset";
+@import "fonts";
+
+body {
+  background-color: $greyColor;
+  font-family: TTNorms, sans-serif;
+  line-height: 1;
+}
+
+.container {
+  max-width: 1180px;
+  padding: 40px;
+  margin: 0 auto;
+}
