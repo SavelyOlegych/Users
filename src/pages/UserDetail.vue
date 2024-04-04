@@ -28,6 +28,9 @@ export default {
     }
   },
   async mounted() {
+    /*
+    опять же, как делал бы в реальном проекте - получаю конкретного юзера по апи, а не ищу в массиве в сторе
+     */
     this.user = await api.getUser(this.$route.params.id);
   }
 };

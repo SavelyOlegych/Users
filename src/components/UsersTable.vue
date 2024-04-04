@@ -54,6 +54,7 @@ export default {
   &__row {
     &--head {
       height: 50px;
+      color: grey;
       
       .users-table__column:first-child {
         padding-left: 25px;
