@@ -15,16 +15,16 @@
         :key="user.id"
       >
         <td class="users-table__column users-table__column--id">
-          <RouterLink to="">{{ user.id }}</RouterLink>
+          <RouterLink :to="'/users/' + user.id">{{ user.id }}</RouterLink>
         </td>
         <td class="users-table__column">
-          <RouterLink to="">{{ user.firstName }} {{ user.lastName }}</RouterLink>
+          <RouterLink :to="'/users/' + user.id">{{ user.firstName }} {{ user.lastName }}</RouterLink>
         </td>
         <td class="users-table__column">
-          <RouterLink to="">{{ user.gender }}</RouterLink>
+          <RouterLink :to="'/users/' + user.id">{{ user.gender }}</RouterLink>
         </td>
         <td class="users-table__column">
-          <RouterLink to="">{{ user.email }}</RouterLink>
+          <RouterLink :to="'/users/' + user.id">{{ user.email }}</RouterLink>
         </td>
       </tr>
     </tbody>
@@ -38,9 +38,6 @@ export default {
     users() {
       return this.$store.getters.users;
     },
-  },
-  mounted() {
-    this.$store.dispatch("fetchUsers");
   },
 };
 </script>

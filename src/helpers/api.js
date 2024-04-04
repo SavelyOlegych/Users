@@ -14,4 +14,13 @@ export default {
       console.log(e);
     }
   },
+  async getUser(userId) {
+    try {
+      const { data } = await axios.get("https://dummyjson.com/users/" + userId);
+
+      return data;
+    } catch (e) {
+      console.log(e);
+    }
+  }
 };
