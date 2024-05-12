@@ -15,16 +15,16 @@
         :key="user.id"
       >
         <td class="users-table__column users-table__column--id">
-          <RouterLink :to="'/users/' + user.id">{{ user.id }}</RouterLink>
+          <RouterLink :to="'/' + user.id">{{ user.id }}</RouterLink>
         </td>
         <td class="users-table__column">
-          <RouterLink :to="'/users/' + user.id">{{ user.firstName }} {{ user.lastName }}</RouterLink>
+          <RouterLink :to="'/' + user.id">{{ user.firstName }} {{ user.lastName }}</RouterLink>
         </td>
         <td class="users-table__column">
-          <RouterLink :to="'/users/' + user.id">{{ user.gender }}</RouterLink>
+          <RouterLink :to="'/' + user.id">{{ user.gender }}</RouterLink>
         </td>
         <td class="users-table__column">
-          <RouterLink :to="'/users/' + user.id">{{ user.email }}</RouterLink>
+          <RouterLink :to="'/' + user.id">{{ user.email }}</RouterLink>
         </td>
       </tr>
     </tbody>
