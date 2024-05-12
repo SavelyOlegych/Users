@@ -29,12 +29,7 @@
 </template>
 
 <script>
-/*
-в ТЗ не указано, как следует реализовать пагинацию, поэтому сделал так, как делал бы на реальном проекте
-с большим массивом данных - через бэк, чтобы не хранить все данные на фронте;
-думаю, если данных не слишком много, то пагинацию можно реализовать и на фронте
- */
-import { mapGetters } from "vuex";
+import { mapGetters, mapMutations, mapActions } from "vuex";
 
 export default {
   name: "Pagination",
@@ -54,17 +49,24 @@ export default {
     },
   },
   methods: {
+    ...mapMutations([
+      "SET_LIMIT",
+      "SET_PAGE",
+    ]),
+    ...mapActions([
+      "fetchUsers",
+    ]),
     pageClick(page) {
       if (this.page !== page) {
-        this.$store.commit("SET_PAGE", page);
-        this.$store.dispatch("fetchUsers");
+        this.SET_PAGE(page);
+        this.fetchUsers();
       }
     },
     limitClick(limit) {
       if (this.limit !== limit) {
-        this.$store.commit("SET_LIMIT", limit);
-        this.$store.commit("SET_PAGE", 1);
-        this.$store.dispatch("fetchUsers");
+        this.SET_LIMIT(limit);
+        this.SET_PAGE(1);
+        this.fetchUsers();
       }
     },
   },

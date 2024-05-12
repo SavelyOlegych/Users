@@ -32,12 +32,14 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+
 export default {
   name: "UsersTable",
   computed: {
-    users() {
-      return this.$store.getters.users;
-    },
+    ...mapGetters([
+      "users",
+    ]),
   },
 };
 </script>

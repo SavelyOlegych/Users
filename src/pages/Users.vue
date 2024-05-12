@@ -11,17 +11,26 @@
 <script>
 import UsersTable from "@/components/UsersTable.vue";
 import Pagination from "@/components/Pagination.vue";
+import { mapGetters, mapActions } from "vuex";
 
 export default {
   name: "Users",
   components: { Pagination, UsersTable },
   computed: {
+    ...mapGetters([
+      "users"
+    ]),
     usersLoaded() {
-      return this.$store.getters.users.length > 0;
+      return this.users.length > 0;
     }
   },
+  methods: {
+    ...mapActions([
+      "fetchUsers"
+    ]),
+  },
   mounted() {
-    this.$store.dispatch("fetchUsers");
+    this.fetchUsers();
   },
 };
 </script>
