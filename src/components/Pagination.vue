@@ -45,7 +45,7 @@ export default {
       "page",
     ]),
     pagesCount() {
-      return this.usersCount / this.limit;
+      return Math.ceil(this.usersCount / this.limit);
     },
   },
   methods: {
