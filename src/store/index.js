@@ -35,10 +35,10 @@ export default new Vuex.Store({
   },
   actions: {
     async fetchUsers({ commit, getters }) {
-      const users = await api.getUsers(getters.page, getters.limit);
+      const response = await api.getUsers(getters.page, getters.limit);
 
-      commit("SET_USERS_COUNT", users.total);
-      commit("SET_USERS", users.users);
+      commit("SET_USERS_COUNT", response.total);
+      commit("SET_USERS", response.users);
     },
   },
 });
